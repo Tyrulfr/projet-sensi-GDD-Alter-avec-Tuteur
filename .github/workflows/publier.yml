@@ -58,3 +58,36 @@ jobs:
         with:
           name: packages-scorm
           path: exports/*.zip
+
+  tester-tuteur:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Installer GovTutor et ses tests
+        run: python -m pip install -e './tuteur[dev]'
+      - name: Tester le simulateur et le pont HTTP
+        run: python -m pytest -q tuteur/tests
+      - name: Construire la formation
+        run: ./build.sh
+      - name: Installer les tests navigateur
+        run: |
+          npm install --ignore-scripts
+          npx playwright install --with-deps chromium
+      - name: Vérifier la formation sans service Python
+        run: npm test
+      - name: Vérifier le parcours avec le checkpoint PPO réel
+        run: npm run test:rl
+      - name: Conserver le rapport et la capture
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: validation-tuteur
+          path: |
+            dist/rapport-navigateur.json
+            dist/tuteur-activite.png

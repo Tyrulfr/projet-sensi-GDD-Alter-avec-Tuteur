@@ -17,7 +17,7 @@
   var LIMITE_ETAT = 4096;
 
   function etatVide() {
-    return { v: VERSION_ETAT, p: 0, s: [], a: {}, e: {} };
+    return { v: VERSION_ETAT, p: 0, s: [], a: {}, e: {}, t: GDD.tuteur ? GDD.tuteur.etatVide() : null };
   }
 
   function Moteur(module, traceur) {
@@ -60,6 +60,7 @@
         etat.e[id] = { b: e.b, d: typeof e.d === 'number' ? e.d : e.b, n: parseInt(e.n, 10) || 1, r: e.r || {} };
       }
     });
+    etat.t = GDD.tuteur ? GDD.tuteur.restaurer(this.module, brut.t) : null;
     this.etat = etat;
     return true;
   };
@@ -67,6 +68,10 @@
   Moteur.prototype.serialiser = function () {
     var copie = JSON.parse(JSON.stringify(this.etat));
     var texte = JSON.stringify(copie);
+    if (texte.length > LIMITE_ETAT && copie.t) {
+      copie.t.h = [];
+      texte = JSON.stringify(copie);
+    }
     /* Dégradation progressive si la limite SCORM est dépassée. */
     if (texte.length > LIMITE_ETAT) {
       Object.keys(copie.e).forEach(function (id) { copie.e[id].r = {}; });
@@ -127,6 +132,7 @@
     var activite = this.module.activites[idActivite];
     var resultat = A.corriger(activite, code);
     this.etat.a[idActivite] = code;
+    if (GDD.tuteur) { GDD.tuteur.observer(this, idActivite, activite, code, "formatif"); }
     this.sauvegarder();
     return resultat;
   };
@@ -163,6 +169,7 @@
     };
     var maintenant = new Date();
     items.forEach(function (it) {
+      if (GDD.tuteur) { GDD.tuteur.observer(self, it.id, it.activite, it.code, "evaluation"); }
       self.interactionsEnAttente.push({
         id: it.id,
         type: A.typeScorm(it.activite),

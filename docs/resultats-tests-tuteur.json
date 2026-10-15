@@ -1,0 +1,195 @@
+{
+  "formation": {
+    "total": 27,
+    "echecs": 0,
+    "details": [
+      {
+        "nom": "Format SCORM du temps de session (CMITimespan)",
+        "ok": true
+      },
+      {
+        "nom": "Texte enrichi : échappement HTML et gras",
+        "ok": true
+      },
+      {
+        "nom": "Texte enrichi : listes à puces",
+        "ok": true
+      },
+      {
+        "nom": "Chaque activité du module accepte sa réponse attendue",
+        "ok": true
+      },
+      {
+        "nom": "Réponses incorrectes ou incomplètes",
+        "ok": true
+      },
+      {
+        "nom": "Types SCORM des interactions",
+        "ok": true
+      },
+      {
+        "nom": "Statut initial : non commencé",
+        "ok": true
+      },
+      {
+        "nom": "Navigation séquentielle",
+        "ok": true
+      },
+      {
+        "nom": "Leçons vues sans quiz : en cours, sans réussite",
+        "ok": true
+      },
+      {
+        "nom": "Quiz réussi (100 %) : terminé et réussi -> passed",
+        "ok": true
+      },
+      {
+        "nom": "Quiz sous le seuil (50 %) -> failed, puis meilleur score conservé",
+        "ok": true
+      },
+      {
+        "nom": "Seuil exact : 75 % >= 70 % réussi",
+        "ok": true
+      },
+      {
+        "nom": "Sauvegarde puis reprise de l'état",
+        "ok": true
+      },
+      {
+        "nom": "Reprise robuste : identifiants inconnus et données corrompues ignorés",
+        "ok": true
+      },
+      {
+        "nom": "suspend_data : parcours complet bien sous la limite de 4096 caractères",
+        "ok": true
+      },
+      {
+        "nom": "suspend_data : dégradation si la limite est dépassée",
+        "ok": true
+      },
+      {
+        "nom": "Adaptateur SCORM 1.2 : initialisation, envoi, fermeture",
+        "ok": true
+      },
+      {
+        "nom": "Adaptateur SCORM 1.2 : sortie en cours -> suspend, puis reprise",
+        "ok": true
+      },
+      {
+        "nom": "Adaptateur SCORM 1.2 : mode consultation (review) sans écriture de résultats",
+        "ok": true
+      },
+      {
+        "nom": "Adaptateur SCORM 1.2 : absence d'API détectée",
+        "ok": true
+      },
+      {
+        "nom": "M2 : chaque activité accepte sa réponse attendue",
+        "ok": true
+      },
+      {
+        "nom": "M2 : bonnes réponses du défi conformes au scénario (B, A, C)",
+        "ok": true
+      },
+      {
+        "nom": "M2 : défi réussi à 3/3 -> terminé, sans réussite/échec, score 100",
+        "ok": true
+      },
+      {
+        "nom": "M2 : défi à 0/3 -> toujours completed (jamais failed), score 0",
+        "ok": true
+      },
+      {
+        "nom": "M2 : leçons vues sans défi -> incomplete",
+        "ok": true
+      },
+      {
+        "nom": "M2 : adaptateur SCORM 1.2 -> completed, score brut, 3 interactions, sortie normale",
+        "ok": true
+      },
+      {
+        "nom": "M2 : reprise après interruption en leçon 2",
+        "ok": true
+      }
+    ]
+  },
+  "tuteur": {
+    "total": 16,
+    "echecs": 0,
+    "details": [
+      {
+        "nom": "Chaque objectif a deux exercices séparés des évaluations",
+        "ok": true
+      },
+      {
+        "nom": "Une réponse formative alimente uniquement son objectif",
+        "ok": true
+      },
+      {
+        "nom": "Une erreur produit un état à retravailler",
+        "ok": true
+      },
+      {
+        "nom": "Répéter la même bonne réponse ne simule pas de nouvelles preuves",
+        "ok": true
+      },
+      {
+        "nom": "Réessayer conserve l’historique des erreurs",
+        "ok": true
+      },
+      {
+        "nom": "Le tutorat ne change pas la note ou le nombre de tentatives du quiz",
+        "ok": true
+      },
+      {
+        "nom": "Soumettre une évaluation observe chaque réponse une fois",
+        "ok": true
+      },
+      {
+        "nom": "Le suivi et les essais sont restaurés entre deux séances",
+        "ok": true
+      },
+      {
+        "nom": "Une ancienne sauvegarde sans tutorat reste lisible",
+        "ok": true
+      },
+      {
+        "nom": "Les observations et masques respectent le contrat PPO",
+        "ok": true
+      },
+      {
+        "nom": "La question suivante varie avec les réussites et la difficulté",
+        "ok": true
+      },
+      {
+        "nom": "Une erreur maintient un exercice simple avant de monter en difficulté",
+        "ok": true
+      },
+      {
+        "nom": "Historique borné et état sous la limite SCORM sur une longue séance",
+        "ok": true
+      },
+      {
+        "nom": "Une question inconnue ne peut pas créer une preuve dans la sauvegarde",
+        "ok": true
+      },
+      {
+        "nom": "La réinitialisation efface aussi le suivi du tuteur",
+        "ok": true
+      },
+      {
+        "nom": "Chaque nouvelle décision locale respecte les masques",
+        "ok": true
+      }
+    ]
+  },
+  "parcours": [
+    "erreur formative",
+    "exercice adaptatif hors note",
+    "reprise après rechargement",
+    "secours sans API",
+    "aperçu SCORM",
+    "sauvegarde tuteur dans une API SCORM simulée"
+  ],
+  "errors": []
+}

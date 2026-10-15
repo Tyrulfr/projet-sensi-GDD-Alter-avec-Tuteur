@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "govtutor-rl"
+version = "0.2.0"
+description = "Tuteur expérimental de gouvernance de la donnée piloté par une politique RL indépendante du LLM"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "numpy>=1.26,<3",
+  "gymnasium>=1.0,<2",
+  "stable-baselines3>=2.3,<3",
+  "sb3-contrib>=2.3,<3",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ruff>=0.6"]
+
+[project.scripts]
+govtutor = "govtutor_rl.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

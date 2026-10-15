@@ -22,6 +22,7 @@ from xml.sax.saxutils import escape, quoteattr
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import valider_contenus  # noqa: E402
+import valider_tutorat  # noqa: E402
 
 RACINE = valider_contenus.RACINE
 SRC = RACINE / "src"
@@ -68,7 +69,10 @@ def page_index(catalogue, config, titre, empreinte, base, contenu):
 
 
 def fichier_contenu(catalogue, modules):
-    donnees = {"catalogue": catalogue, "modules": modules}
+    tutorat = json.loads((RACINE / "contenus" / "tutorat.json").read_text(encoding="utf-8"))
+    objectifs = {o["id"] for m in modules.values() for o in m["objectifsSpecifiques"]}
+    tutorat["objectifs"] = {k: v for k, v in tutorat["objectifs"].items() if k in objectifs}
+    donnees = {"catalogue": catalogue, "modules": modules, "tutorat": tutorat}
     return "window.GDD_CONTENU = " + json.dumps(donnees, ensure_ascii=False, separators=(",", ":")) + ";\n"
 
 
@@ -159,6 +163,12 @@ def construire():
     valider_contenus.afficher_rapport(rapport)
     if rapport.erreurs:
         print("Construction interrompue : corriger les erreurs ci-dessus.")
+        return 1
+
+    erreurs_tuteur = valider_tutorat.valider(modules)
+    if erreurs_tuteur:
+        for erreur in erreurs_tuteur:
+            print(f"Tutorat : {erreur}")
         return 1
 
     if DIST.exists():

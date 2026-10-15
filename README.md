@@ -10,6 +10,16 @@ Une **source unique** de contenus pédagogiques produit deux diffusions :
 > État : prototype. Les **modules 1 et 2** sont complets ; les modules 3 à 7 sont déclarés « en préparation ».
 > Les contenus sont une **proposition à valider**. La compatibilité eCampus **n'est pas encore vérifiée** (voir `docs/rapport-tests.md`).
 
+## Tuteur adaptatif intégré
+
+Les modules 1 et 2 proposent un accompagnement **après les activités corrigées et après le quiz/défi**. Le tuteur suit les réponses par objectif, propose des indices, rappels et exercices supplémentaires adaptés, et conserve son suivi entre les séances dans le même navigateur ou dans la sauvegarde SCORM du module.
+
+Le mode publié sur GitHub Pages utilise des **règles pédagogiques locales**, sans LLM, sans clé API et sans serveur. Les exercices d'accompagnement ne changent pas les notes. L'estimation des acquis reste indicative ; les contenus ajoutés sont à faire valider pédagogiquement.
+
+Le dépôt inclut aussi GovTutor RL v0.2, ses trois checkpoints PPO et ses résultats synthétiques sous `tuteur/`. **Le checkpoint PPO peut réellement piloter l'accompagnement en local**, avec un service Python optionnel ; GitHub Pages ne peut pas héberger ce service. Le modèle n'apprend pas en ligne à partir des réponses humaines.
+
+Voir [le guide d'utilisation et d'intégration](docs/tuteur.md), [le rapport de validation](docs/validation-tuteur.md) et [l'audit scientifique du prototype RL](tuteur/docs/AUDIT-v0.2.md).
+
 ## Prérequis
 
 Uniquement Python 3 (déjà présent sur macOS) et un navigateur. Aucune dépendance à installer.
@@ -30,17 +40,17 @@ Après `./serve.sh` :
 
 ## Publication sur GitHub
 
-Le site est publié par GitHub Pages **directement depuis la branche `main`** (réglage : Settings → Pages → Deploy from a branch → `main` / racine). La page `index.html` à la racine du dépôt est l'accueil de la formation : elle présente les modules et permet de les suivre.
+Pour publier cette copie, configurer GitHub Pages **depuis la branche `main`** (réglage : Settings → Pages → Deploy from a branch → `main` / racine). La page `index.html` à la racine du dépôt est l'accueil de la formation : elle présente les modules et permet de les suivre.
 
 Les fichiers générés publiés (`index.html`, `contenus/contenu.js`, `exports/*.zip`) sont donc versionnés. **Après toute modification des contenus ou du code : lancer `./build.sh`, puis committer.** Le workflow `.github/workflows/publier.yml` vérifie à chaque `push` que les contenus sont valides et que ces fichiers sont bien à jour ; sinon, l'exécution échoue avec un message explicite.
 
-Adresses publiées :
+Adresses prévues une fois GitHub Pages activé pour cette copie :
 
-- formation : <https://tyrulfr.github.io/Projet-Sensi-GDD-Alter/>
-- tests unitaires : <https://tyrulfr.github.io/Projet-Sensi-GDD-Alter/tests/>
+- formation : <https://tyrulfr.github.io/projet-sensi-GDD-Alter-avec-Tuteur/>
+- tests unitaires : <https://tyrulfr.github.io/projet-sensi-GDD-Alter-avec-Tuteur/tests/>
 - packages SCORM (aussi accessibles depuis la page Parcours) :
-  - module 1 : <https://tyrulfr.github.io/Projet-Sensi-GDD-Alter/exports/module-01-la-donnee-dans-mon-quotidien-scorm12.zip>
-  - module 2 : <https://tyrulfr.github.io/Projet-Sensi-GDD-Alter/exports/module-02-une-donnee-plusieurs-usages-scorm12.zip>
+  - module 1 : <https://tyrulfr.github.io/projet-sensi-GDD-Alter-avec-Tuteur/exports/module-01-la-donnee-dans-mon-quotidien-scorm12.zip>
+  - module 2 : <https://tyrulfr.github.io/projet-sensi-GDD-Alter-avec-Tuteur/exports/module-02-une-donnee-plusieurs-usages-scorm12.zip>
 
 Le simulateur SCORM n'est disponible qu'en local (`./serve.sh`).
 
@@ -78,3 +88,33 @@ dist/                     fichiers de test générés (non versionnés)
 - `docs/conception.md` : architecture, modèle de progression, règles SCORM, décisions à valider.
 - `docs/rapport-tests.md` : tests réalisés, résultats, limites.
 - `concepteur/README.md` : comment modifier un texte, ajouter une leçon ou une question.
+
+## Essayer la politique PPO en local
+
+Depuis la racine du dépôt, avec Python 3.10 minimum (3.12 recommandé) :
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install -e './tuteur[dev]'
+./build.sh
+python -m govtutor_rl.cli serve --site . --checkpoint tuteur/models/governance_ppo.zip --port 8000
+```
+
+Ouvrir <http://127.0.0.1:8000/>, puis un module. Dans « Ton accompagnement personnalisé », ouvrir « Historique récent et réglages du tuteur » et activer la politique RL locale. Pour les prochains accompagnements, elle sélectionne les interventions ; les textes sont exécutés localement. Sans cette activation, les règles restent utilisées.
+
+## Tests du tuteur
+
+```bash
+# Tests Python (avec l'environnement précédent)
+python -m pytest -q tuteur/tests
+
+# Tests du moteur, du tuteur et du parcours dans Chromium (Node.js 20+)
+npm install
+npx playwright install chromium
+npm test
+# Avec le vrai checkpoint PPO et le serveur démarré par le test
+npm run test:rl
+```
+
+Les scripts de tests lancent leur serveur sur un port local libre. Les rapports et la capture sont produits dans `dist/`. La CI vérifie les deux modes. Tester les modules dans le simulateur SCORM ne remplace pas leur validation sur eCampus.

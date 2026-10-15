@@ -1,0 +1,438 @@
+{
+  "version": 1,
+  "statut": "proposition à valider par un référent pédagogique",
+  "objectifs": {
+    "os1-1": {
+      "lecon": "m01-l1",
+      "competenceRL": "metadata",
+      "prerequis": null,
+      "concept": "Une donnée est un élément enregistré ; une information vient de son interprétation dans un contexte.",
+      "indice": "Demande-toi si tu lis un élément enregistré ou une conclusion tirée de plusieurs éléments.",
+      "exemple": "Une température de 18 °C est une donnée. « Cette salle est plus froide que les autres » est une information issue d’une comparaison.",
+      "questions": [
+        {
+          "id": "os1-1-t1",
+          "difficulte": 1,
+          "type": "choix-unique",
+          "objectif": "os1-1",
+          "consigne": "Un numéro de salle, comme B204, est…",
+          "choix": [
+            {
+              "id": "0",
+              "texte": "Une conclusion issue d’une analyse"
+            },
+            {
+              "id": "1",
+              "texte": "Une donnée enregistrée"
+            }
+          ],
+          "reponse": "1",
+          "explication": {
+            "correct": "Une donnée est un élément enregistré ; une information vient de son interprétation dans un contexte.",
+            "incorrect": "Une donnée est un élément enregistré ; une information vient de son interprétation dans un contexte."
+          }
+        },
+        {
+          "id": "os1-1-t2",
+          "difficulte": 2,
+          "type": "choix-unique",
+          "objectif": "os1-1",
+          "consigne": "« Les interventions durent plus longtemps cet hiver » est…",
+          "choix": [
+            {
+              "id": "0",
+              "texte": "Une donnée brute isolée"
+            },
+            {
+              "id": "1",
+              "texte": "Une information issue d’une comparaison"
+            }
+          ],
+          "reponse": "1",
+          "explication": {
+            "correct": "Une donnée est un élément enregistré ; une information vient de son interprétation dans un contexte.",
+            "incorrect": "Une donnée est un élément enregistré ; une information vient de son interprétation dans un contexte."
+          }
+        }
+      ]
+    },
+    "os1-2": {
+      "lecon": "m01-l2",
+      "competenceRL": "privacy",
+      "prerequis": "os1-1",
+      "concept": "Une donnée peut servir un métier et permettre aussi d’identifier une personne, directement ou indirectement.",
+      "indice": "Il n’est pas nécessaire de lire un nom : un identifiant peut permettre de retrouver une personne.",
+      "exemple": "Le code d’un agent peut servir au suivi administratif et permettre au service habilité de retrouver cet agent.",
+      "questions": [
+        {
+          "id": "os1-2-t1",
+          "difficulte": 1,
+          "type": "choix-unique",
+          "objectif": "os1-2",
+          "consigne": "Un identifiant de lecteur relié à une fiche nominative est-il une donnée personnelle ?",
+          "choix": [
+            {
+              "id": "0",
+              "texte": "Non, il ne contient pas de nom"
+            },
+            {
+              "id": "1",
+              "texte": "Oui, il permet une identification indirecte"
+            }
+          ],
+          "reponse": "1",
+          "explication": {
+            "correct": "Une donnée peut servir un métier et permettre aussi d’identifier une personne, directement ou indirectement.",
+            "incorrect": "Une donnée peut servir un métier et permettre aussi d’identifier une personne, directement ou indirectement."
+          }
+        },
+        {
+          "id": "os1-2-t2",
+          "difficulte": 2,
+          "type": "choix-unique",
+          "objectif": "os1-2",
+          "consigne": "Une liste nominative d’affectations utilisée par les RH contient…",
+          "choix": [
+            {
+              "id": "0",
+              "texte": "Uniquement des données métier"
+            },
+            {
+              "id": "1",
+              "texte": "Des données à la fois métier et personnelles"
+            }
+          ],
+          "reponse": "1",
+          "explication": {
+            "correct": "Une donnée peut servir un métier et permettre aussi d’identifier une personne, directement ou indirectement.",
+            "incorrect": "Une donnée peut servir un métier et permettre aussi d’identifier une personne, directement ou indirectement."
+          }
+        }
+      ]
+    },
+    "os1-3": {
+      "lecon": "m01-l3",
+      "competenceRL": "metadata",
+      "prerequis": "os1-1",
+      "concept": "Les données sont enregistrées sur des supports et peuvent être gérées par des applications ; leurs copies peuvent diverger.",
+      "indice": "Un fichier plus récent n’est pas automatiquement la source qui fait référence.",
+      "exemple": "Deux copies d’un inventaire peuvent afficher des dates différentes ; il faut identifier la source de référence et vérifier son actualisation.",
+      "questions": [
+        {
+          "id": "os1-3-t1",
+          "difficulte": 1,
+          "type": "choix-unique",
+          "objectif": "os1-3",
+          "consigne": "Un tableur et un courriel donnent des dates différentes. Que faire ?",
+          "choix": [
+            {
+              "id": "0",
+              "texte": "Choisir au hasard la date la plus récente"
+            },
+            {
+              "id": "1",
+              "texte": "Identifier la source de référence et vérifier la mise à jour"
+            }
+          ],
+          "reponse": "1",
+          "explication": {
+            "correct": "Les données sont enregistrées sur des supports et peuvent être gérées par des applications ; leurs copies peuvent diverger.",
+            "incorrect": "Les données sont enregistrées sur des supports et peuvent être gérées par des applications ; leurs copies peuvent diverger."
+          }
+        },
+        {
+          "id": "os1-3-t2",
+          "difficulte": 2,
+          "type": "choix-unique",
+          "objectif": "os1-3",
+          "consigne": "Pourquoi multiplier les copies d’un inventaire peut-il poser problème ?",
+          "choix": [
+            {
+              "id": "0",
+              "texte": "Chaque copie peut évoluer différemment"
+            },
+            {
+              "id": "1",
+              "texte": "Une copie garantit que toutes les autres sont mises à jour"
+            }
+          ],
+          "reponse": "0",
+          "explication": {
+            "correct": "Les données sont enregistrées sur des supports et peuvent être gérées par des applications ; leurs copies peuvent diverger.",
+            "incorrect": "Les données sont enregistrées sur des supports et peuvent être gérées par des applications ; leurs copies peuvent diverger."
+          }
+        }
+      ]
+    },
+    "os2-1": {
+      "lecon": "m02-l1",
+      "competenceRL": "sharing",
+      "prerequis": null,
+      "concept": "Une donnée produite dans un service peut être utile à d’autres services pour leurs missions.",
+      "indice": "Distingue le service qui saisit une information des services qui peuvent en avoir besoin.",
+      "exemple": "L’affectation d’un agent peut servir à la gestion de son dossier et à l’organisation de ses accès professionnels.",
+      "questions": [
+        {
+          "id": "os2-1-t1",
+          "difficulte": 1,
+          "type": "choix-unique",
+          "objectif": "os2-1",
+          "consigne": "Une affectation saisie par les RH peut-elle servir à organiser des accès informatiques ?",
+          "choix": [
+            {
+              "id": "0",
+              "texte": "Non, seul le service de saisie peut l’utiliser"
+            },
+            {
+              "id": "1",
+              "texte": "Oui, si cet usage et cet accès sont autorisés"
+            }
+          ],
+          "reponse": "1",
+          "explication": {
+            "correct": "Une donnée produite dans un service peut être utile à d’autres services pour leurs missions.",
+            "incorrect": "Une donnée produite dans un service peut être utile à d’autres services pour leurs missions."
+          }
+        },
+        {
+          "id": "os2-1-t2",
+          "difficulte": 2,
+          "type": "choix-unique",
+          "objectif": "os2-1",
+          "consigne": "Une information peut-elle servir à deux missions différentes ?",
+          "choix": [
+            {
+              "id": "0",
+              "texte": "Oui, dans un cadre adapté à chaque mission"
+            },
+            {
+              "id": "1",
+              "texte": "Non, elle doit toujours avoir un seul utilisateur"
+            }
+          ],
+          "reponse": "0",
+          "explication": {
+            "correct": "Une donnée produite dans un service peut être utile à d’autres services pour leurs missions.",
+            "incorrect": "Une donnée produite dans un service peut être utile à d’autres services pour leurs missions."
+          }
+        }
+      ]
+    },
+    "os2-2": {
+      "lecon": "m02-l1",
+      "competenceRL": "sharing",
+      "prerequis": "os2-1",
+      "concept": "Un service ne doit recevoir que les informations utiles à sa mission, avec les autorisations adaptées.",
+      "indice": "Pars du besoin concret du service : de quelles informations a-t-il besoin pour agir ?",
+      "exemple": "Pour préparer un bureau, les services généraux peuvent avoir besoin de l’arrivée et de l’affectation, pas du dossier RH complet.",
+      "questions": [
+        {
+          "id": "os2-2-t1",
+          "difficulte": 1,
+          "type": "choix-unique",
+          "objectif": "os2-2",
+          "consigne": "Pour préparer un bureau, quelle démarche est adaptée ?",
+          "choix": [
+            {
+              "id": "0",
+              "texte": "Envoyer tout le dossier de l’agent"
+            },
+            {
+              "id": "1",
+              "texte": "Identifier les informations utiles et les accès autorisés"
+            }
+          ],
+          "reponse": "1",
+          "explication": {
+            "correct": "Un service ne doit recevoir que les informations utiles à sa mission, avec les autorisations adaptées.",
+            "incorrect": "Un service ne doit recevoir que les informations utiles à sa mission, avec les autorisations adaptées."
+          }
+        },
+        {
+          "id": "os2-2-t2",
+          "difficulte": 2,
+          "type": "choix-unique",
+          "objectif": "os2-2",
+          "consigne": "Un service a un besoin légitime d’une information. Cela autorise-t-il l’accès à toutes les autres ?",
+          "choix": [
+            {
+              "id": "0",
+              "texte": "Non, l’accès reste limité au besoin"
+            },
+            {
+              "id": "1",
+              "texte": "Oui, sans autre vérification"
+            }
+          ],
+          "reponse": "0",
+          "explication": {
+            "correct": "Un service ne doit recevoir que les informations utiles à sa mission, avec les autorisations adaptées.",
+            "incorrect": "Un service ne doit recevoir que les informations utiles à sa mission, avec les autorisations adaptées."
+          }
+        }
+      ]
+    },
+    "os2-3": {
+      "lecon": "m02-l2",
+      "competenceRL": "lineage",
+      "prerequis": "os2-1",
+      "concept": "Une information non actualisée peut être reprise dans plusieurs documents et y propager une erreur.",
+      "indice": "Cherche d’abord l’origine de l’information et ses réutilisations.",
+      "exemple": "Un ancien code de bâtiment repris dans plusieurs extractions peut fausser différents tableaux de suivi.",
+      "questions": [
+        {
+          "id": "os2-3-t1",
+          "difficulte": 1,
+          "type": "choix-unique",
+          "objectif": "os2-3",
+          "consigne": "Un ancien code a été recopié dans trois tableaux. Par où commencer ?",
+          "choix": [
+            {
+              "id": "0",
+              "texte": "Corriger une seule copie sans rechercher l’origine"
+            },
+            {
+              "id": "1",
+              "texte": "Identifier la source appropriée et les documents concernés"
+            }
+          ],
+          "reponse": "1",
+          "explication": {
+            "correct": "Une information non actualisée peut être reprise dans plusieurs documents et y propager une erreur.",
+            "incorrect": "Une information non actualisée peut être reprise dans plusieurs documents et y propager une erreur."
+          }
+        },
+        {
+          "id": "os2-3-t2",
+          "difficulte": 2,
+          "type": "choix-unique",
+          "objectif": "os2-3",
+          "consigne": "Une donnée est corrigée à sa source. Les anciennes copies sont-elles forcément corrigées ?",
+          "choix": [
+            {
+              "id": "0",
+              "texte": "Non, il faut vérifier leurs mises à jour"
+            },
+            {
+              "id": "1",
+              "texte": "Oui, toutes les copies se synchronisent toujours"
+            }
+          ],
+          "reponse": "0",
+          "explication": {
+            "correct": "Une information non actualisée peut être reprise dans plusieurs documents et y propager une erreur.",
+            "incorrect": "Une information non actualisée peut être reprise dans plusieurs documents et y propager une erreur."
+          }
+        }
+      ]
+    },
+    "os2-4": {
+      "lecon": "m02-l2",
+      "competenceRL": "quality",
+      "prerequis": "os2-3",
+      "concept": "La qualité d’une donnée concerne les acteurs qui la produisent, la mettent à jour et la réutilisent.",
+      "indice": "Une erreur peut dépasser le service où elle apparaît : pense aux acteurs en aval.",
+      "exemple": "Une affectation erronée peut affecter le suivi administratif et les indicateurs d’effectifs ; plusieurs acteurs doivent se coordonner.",
+      "questions": [
+        {
+          "id": "os2-4-t1",
+          "difficulte": 1,
+          "type": "choix-unique",
+          "objectif": "os2-4",
+          "consigne": "Une erreur fausse un bilan construit à partir d’un fichier. Qui peut être concerné ?",
+          "choix": [
+            {
+              "id": "0",
+              "texte": "Seulement la personne qui a créé le premier fichier"
+            },
+            {
+              "id": "1",
+              "texte": "Les producteurs et les utilisateurs des informations concernées"
+            }
+          ],
+          "reponse": "1",
+          "explication": {
+            "correct": "La qualité d’une donnée concerne les acteurs qui la produisent, la mettent à jour et la réutilisent.",
+            "incorrect": "La qualité d’une donnée concerne les acteurs qui la produisent, la mettent à jour et la réutilisent."
+          }
+        },
+        {
+          "id": "os2-4-t2",
+          "difficulte": 2,
+          "type": "choix-unique",
+          "objectif": "os2-4",
+          "consigne": "Quel réflexe aide à éviter qu’une erreur revienne ?",
+          "choix": [
+            {
+              "id": "0",
+              "texte": "Clarifier les mises à jour et coordonner les acteurs concernés"
+            },
+            {
+              "id": "1",
+              "texte": "Chercher uniquement une personne à blâmer"
+            }
+          ],
+          "reponse": "0",
+          "explication": {
+            "correct": "La qualité d’une donnée concerne les acteurs qui la produisent, la mettent à jour et la réutilisent.",
+            "incorrect": "La qualité d’une donnée concerne les acteurs qui la produisent, la mettent à jour et la réutilisent."
+          }
+        }
+      ]
+    },
+    "os2-5": {
+      "lecon": "m02-l3",
+      "competenceRL": "sharing",
+      "prerequis": "os2-2",
+      "concept": "Les données peuvent former un patrimoine partagé tout en restant soumises à des responsabilités et à des règles d’accès.",
+      "indice": "Le choix n’est pas limité à tout bloquer ou tout diffuser : un partage encadré est possible.",
+      "exemple": "La bibliothèque peut partager certaines informations bibliographiques après vérification du besoin et des conditions de réutilisation.",
+      "questions": [
+        {
+          "id": "os2-5-t1",
+          "difficulte": 1,
+          "type": "choix-unique",
+          "objectif": "os2-5",
+          "consigne": "Un service demande une partie d’un inventaire pour sa mission. Que vérifier ?",
+          "choix": [
+            {
+              "id": "0",
+              "texte": "Rien, puisqu’il appartient au même établissement"
+            },
+            {
+              "id": "1",
+              "texte": "Le besoin, les informations utiles et les conditions de transmission"
+            }
+          ],
+          "reponse": "1",
+          "explication": {
+            "correct": "Les données peuvent former un patrimoine partagé tout en restant soumises à des responsabilités et à des règles d’accès.",
+            "incorrect": "Les données peuvent former un patrimoine partagé tout en restant soumises à des responsabilités et à des règles d’accès."
+          }
+        },
+        {
+          "id": "os2-5-t2",
+          "difficulte": 2,
+          "type": "choix-unique",
+          "objectif": "os2-5",
+          "consigne": "Un patrimoine informationnel partagé implique-t-il que tous les dossiers soient accessibles à tous ?",
+          "choix": [
+            {
+              "id": "0",
+              "texte": "Non, les responsabilités et les règles d’accès restent nécessaires"
+            },
+            {
+              "id": "1",
+              "texte": "Oui, tout doit être ouvert sans restriction"
+            }
+          ],
+          "reponse": "0",
+          "explication": {
+            "correct": "Les données peuvent former un patrimoine partagé tout en restant soumises à des responsabilités et à des règles d’accès.",
+            "incorrect": "Les données peuvent former un patrimoine partagé tout en restant soumises à des responsabilités et à des règles d’accès."
+          }
+        }
+      ]
+    }
+  }
+}

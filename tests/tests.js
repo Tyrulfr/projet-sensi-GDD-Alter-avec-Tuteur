@@ -184,7 +184,8 @@
       Object.keys(module.activites).forEach(function (id) { m.repondre(id, A.reponseAttendue(module.activites[id])); });
       m.soumettreEvaluation(idEval, bonnesReponses(module, idEval));
       var n = m.serialiser().length;
-      vrai(n < 1000, n + ' caractères');
+      /* Le tutorat ajoute un suivi par objectif ; conserver au moins 50 % de marge SCORM. */
+      vrai(n < GDD.Moteur.LIMITE_ETAT / 2, n + ' caractères');
     });
 
     test('suspend_data : dégradation si la limite est dépassée', function () {

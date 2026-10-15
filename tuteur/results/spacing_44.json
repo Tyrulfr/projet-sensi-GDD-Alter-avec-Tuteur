@@ -1,0 +1,93 @@
+{
+  "random": {
+    "reward": 0.5785,
+    "test_gain": 0.1536,
+    "delayed_gain": 0.1089,
+    "mastery_gain_simulated": 0.16,
+    "hints": 2.7667,
+    "ci95": {
+      "test_gain": [
+        0.1198,
+        0.1854
+      ],
+      "delayed_gain": [
+        0.0719,
+        0.1453
+      ]
+    }
+  },
+  "rules": {
+    "reward": 0.1463,
+    "test_gain": 0.101,
+    "delayed_gain": 0.0479,
+    "mastery_gain_simulated": 0.0962,
+    "hints": 5.85,
+    "ci95": {
+      "test_gain": [
+        0.0703,
+        0.1318
+      ],
+      "delayed_gain": [
+        0.0141,
+        0.087
+      ]
+    }
+  },
+  "rl": {
+    "reward": 0.159,
+    "test_gain": 0.0969,
+    "delayed_gain": 0.0417,
+    "mastery_gain_simulated": 0.0927,
+    "hints": 0.0,
+    "ci95": {
+      "test_gain": [
+        0.0667,
+        0.1271
+      ],
+      "delayed_gain": [
+        0.0063,
+        0.0776
+      ]
+    }
+  },
+  "_paired_rl_differences": {
+    "random": {
+      "test_gain": {
+        "mean": -0.0568,
+        "ci95": [
+          -0.0792,
+          -0.0354
+        ]
+      },
+      "delayed_gain": {
+        "mean": -0.0672,
+        "ci95": [
+          -0.0896,
+          -0.0448
+        ]
+      }
+    },
+    "rules": {
+      "test_gain": {
+        "mean": -0.0042,
+        "ci95": [
+          -0.0141,
+          0.0063
+        ]
+      },
+      "delayed_gain": {
+        "mean": -0.0063,
+        "ci95": [
+          -0.0182,
+          0.0042
+        ]
+      }
+    }
+  },
+  "_metadata": {
+    "episodes_per_policy": 120,
+    "seed": 1000,
+    "simulator": "spacing",
+    "warning": "Résultats d'élèves simulés ; aucune preuve d'efficacité avec des humains."
+  }
+}

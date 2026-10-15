@@ -1,0 +1,33 @@
+{
+  "seed": 44,
+  "timesteps_requested": 30000,
+  "timesteps_actual": 30208,
+  "versions": {
+    "gymnasium": "1.4.0",
+    "numpy": "2.5.4",
+    "torch": "2.14.1",
+    "stable-baselines3": "2.9.0",
+    "sb3-contrib": "2.9.0"
+  },
+  "max_steps": 14,
+  "observation_shape": [
+    11
+  ],
+  "action_space": 12,
+  "curriculum_keys": [
+    "strategy",
+    "roles",
+    "metadata",
+    "catalog",
+    "quality",
+    "lineage",
+    "classification",
+    "access",
+    "privacy",
+    "retention",
+    "mdm",
+    "sharing"
+  ],
+  "training_environment": "synthetic, uncalibrated",
+  "warning": "Aucune validation d'apprentissage humain ; RL formé sur un simulateur heuristique."
+}

@@ -317,3 +317,14 @@ tbody th { font-weight: 700; }
   .entete nav, .actions, .nav-lecon, .lien-evitement { display: none; }
   .bloc { break-inside: avoid; animation: none; }
 }
+
+/* Accompagnement GovTutor, dans le flux de la formation. */
+.tuteur { border-inline-start: .3rem solid var(--couleur-primaire, #315b71); }
+.tuteur h3 { margin-top: .5rem; }
+.tuteur-exercice { margin-top: 1.25rem; }
+.tuteur-details { margin-block: 1rem; }
+.tuteur-details summary { cursor: pointer; font-weight: 600; }
+.tuteur-objectifs { padding-inline-start: 1.3rem; }
+.tuteur-objectifs li { margin-block: .8rem; }
+.tuteur-etat { display: block; font-size: .95rem; margin-top: .2rem; }
+.tuteur .activite { margin-bottom: .75rem; }

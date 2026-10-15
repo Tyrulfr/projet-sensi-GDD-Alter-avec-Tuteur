@@ -1,0 +1,11 @@
+{
+  "name": "formation-gdd-avec-tuteur",
+  "version": "0.2.0",
+  "private": true,
+  "description": "Tests navigateur de la formation et de son accompagnement GovTutor",
+  "scripts": {
+    "test": "node scripts/test-navigateur.cjs",
+    "test:rl": "TEST_RL=1 node scripts/test-navigateur.cjs"
+  },
+  "devDependencies": { "playwright": "1.62.1" }
+}

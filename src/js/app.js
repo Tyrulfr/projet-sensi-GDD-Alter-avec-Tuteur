@@ -238,6 +238,7 @@
         h('h2', { text: 'Dans ce module, tu vas apprendre à' }),
         h('ul', { class: 'liste-objectifs' }, mod.objectifsSpecifiques.map(function (o) { return h('li', { text: o.texte }); }))
       ]),
+      UI.tuteurBilan(m),
       h('section', { class: 'carte' }, [h('h2', { text: 'Étapes du module' }), lecons])
     ];
   }
@@ -325,7 +326,8 @@
               etat.focus = 'act-' + b.ref;
               afficher();
             }
-          }).element
+          }).element,
+          code ? UI.tuteurCarte(m, act.objectif) : null
         ]);
       } else {
         el = UI.bloc(b);
@@ -546,6 +548,8 @@
         enregistre.n > 1 ? h('p', { text: 'Meilleur résultat sur ' + enregistre.n + ' tentatives : ' + meilleur + '.' }) : null,
         h('p', null, ['Statut du module : ', UI.badge(st)])
       ]),
+      UI.tuteurBilan(m),
+      UI.tuteurRevision(m),
       defi
         ? h('details', { class: 'recapitulatif' }, [h('summary', null, 'Revoir les corrections'), corrections])
         : h('div', null, [h('h2', { text: 'Correction' }), corrections]),

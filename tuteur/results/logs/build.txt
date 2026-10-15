@@ -1,0 +1,12 @@
+Processing /Users/ups_ifpoc/Documents/ChatGPT/IA tuteur/GovTutor-RL
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Building wheels for collected packages: govtutor-rl
+  Building wheel for govtutor-rl (pyproject.toml): started
+  Building wheel for govtutor-rl (pyproject.toml): finished with status 'done'
+  Created wheel for govtutor-rl: filename=govtutor_rl-0.2.0-py3-none-any.whl size=22842 sha256=9781799a55b0ca25cdf09801ef039a819c9827c5cf0ddecd4b1fd830e68e6233
+  Stored in directory: /Users/ups_ifpoc/Library/Caches/pip/wheels/86/9f/07/8bfc60a1f2f8154eb99fe8ee41936980e4fbeee4b6bd935b28
+Successfully built govtutor-rl
+
+[notice] A new release of pip is available: 25.0.1 -> 26.2.1
+[notice] To update, run: /Users/ups_ifpoc/Documents/ChatGPT/IA tuteur/GovTutor-RL/.venv/bin/python -m pip install --upgrade pip
